@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Sign Up Member System</title>
+   <style>
+       body {
+           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+           font-size: 15px;
+           margin: 0;
+           padding: 0;
+           background-color: #0f1620;
+       }
+       h2 {
+           text-align: center;
+           margin: 7rem auto 2rem auto;
+           color: #fff;
+           font-weight: 500;
+       }
+       .container {
+           width: 280px;
+           margin: 0px auto;
+           overflow: scroll;
+           padding: 1.5rem;
+           background: #161b22;
+           border-radius: 8px;
+           box-shadow: 0 0 10px #283240;
+           border: 1px solid #30363db3;
+           color: #fff;
+       }
+       label {
+           text-align: left;
+           font-weight: 500;
+       }
+       input {
+            font-family: inherit;
+           width: 100%;
+           padding: 8px 12px;
+           margin: 1rem 0 1rem 0;
+           box-sizing: border-box;
+           border-radius: 8px;
+           border: 1px solid #30363d;
+           background-color: #0f1620;
+           color: #fff;
+           font-size: 15px;
+       }
+       button {
+            width: 100%;
+            margin-top: 1rem;
+            padding: 10px 10px;
+            border-radius: 8px;
+            border: 1px solid #238636;
+            background-color: #238636;
+            color: #ffffff;
+            font-size: 15px;
+       }
+       hr {
+            margin: 2rem 0 1.5rem 0;
+            border-color: #30363db3;
+       }
+       .cont2 {
+            text-align: center;
+            font-weight: 500;
+       }
+        a {
+            text-decoration: none;
+            color: #4493f8;
+       }
+       a:hover {
+            text-decoration: underline;
+       }
+       .footer {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 80px;
+            padding: 5px;
+            color: #8d96a0;
+       }
+   </style>
+</head>
+<body>
+   <h2>Create an account</h2>
+   <div class="container">
+       <form action="/signupReady" method="POST">
+           <label>Email address</label>
+           <input type="email" name="email" autocomplete="off" required/>
+           <label>Password</label>
+           <input type="password" name="password" required/>
+           <button type="submit">SIGN UP</button>
+       </form>
+       <hr>
+       <div class="cont2">
+            <p>Already have an account？</p>
+            <a href="/">SIGN IN</a>
+       </div>
+   </div>
+   
+
+   <div class="footer">
+       <p>Copyright © 2024 Yvonne Yu. All rights reserved.</p>
+   </div>
+   
+</body>
+</html>
