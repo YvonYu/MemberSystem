@@ -92,4 +92,6 @@ def get_username_from_email(user_email):
 
 
 # 啟動伺服器
-app.run(port=3000)
+if __name__ == '__main__':
+    app.run(debug=True, port=3000)
+# app.run(port=3000)
