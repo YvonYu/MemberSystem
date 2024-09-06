@@ -1,18 +1,16 @@
 # 初始化資料庫連線
+from flask import Flask, render_template, request, redirect, session
 import pymongo
 uri = "mongodb+srv://root:root123@cluster0.q14hq9k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 try:
     client = pymongo.MongoClient(uri)
     db = client.member_system
-
-    print('successful connections')
+    print('Successful connection to MongoDB')
 
 except Exception as e:
-    print(e)
-
+    print(f'Error connecting to MongoDB: {e}')
 
 # 初始化 Flask 伺服器
-from flask import *
 app = Flask(__name__,)
 app.secret_key = 'any string but secret'
 
@@ -71,12 +69,15 @@ def signin():
             {'password':user_password}
         ]
     })
-    if result == None:
-        return redirect('/error?msg=帳號或密碼輸入錯誤')
     # 登入成功，在session中紀錄會員資訊，並導向到會員頁面
-    username = get_username_from_email(result['email'])
-    session['username'] = username
-    return redirect('/member')
+    if result:
+        username = get_username_from_email(result['email'])
+        session['username'] = username
+        return redirect('/member')
+    elif result == None:
+        return redirect('/error?msg=帳號或密碼輸入錯誤')
+    else:
+        return redirect('/error?msg=發生無預期的錯誤，請再試一次')
 
 @app.route('/signout')
 def signout():
