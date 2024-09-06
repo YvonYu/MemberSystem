@@ -1,6 +1,6 @@
 # Member System
 
-這是一個基於 Flask 和 MongoDB 的簡易會員登入系統，包含用戶登入、註冊和登出功能。此系統使用 `bcrypt` 來加密用戶密碼，以提高安全性。
+這是一個基於 Flask 和 MongoDB 的簡易會員登入系統，包含用戶登入、註冊和登出功能。
 
 - 網站框架：Flask
 - 資料庫系統：MongoDB
